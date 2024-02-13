@@ -3,7 +3,8 @@
 	"package": "com.withtutorial.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+      	"MinecraftClientMixin",
+		"KeyboardMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
