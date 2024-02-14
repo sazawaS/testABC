@@ -3,28 +3,31 @@ package com.withtutorial.modules;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 
+import com.withtutorial.MujiMod;
+
 public class ModuleBase {
 
-    private String name;
     private int key;
     private boolean enabled;
 
     protected MinecraftClient minecraftClient;
     protected PlayerEntity playerInstance;
+    private boolean init = false;
 
+    public void doInit() {
+        this.minecraftClient = MinecraftClient.getInstance();
+        this.playerInstance = this.minecraftClient.player;
 
-    public ModuleBase(String _name)
-    {
-        this.name = _name;
+        if (this.playerInstance == null) {
+            this.init = false;
+        }
+        else {
+            this.init = true;
+        }
+
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    public boolean isInit() {return this.init;}
 
     public int getKey() {
         return key;
