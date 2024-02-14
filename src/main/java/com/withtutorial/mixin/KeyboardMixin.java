@@ -10,7 +10,7 @@ import com.withtutorial.MujiMod;
 
 @Mixin(Keyboard.class)
 public class KeyboardMixin {
-    @Inject(at = @At("HEAD"), method = "onKey()V")
+    @Inject(at = @At("HEAD"), method = "onKey")
     public void _onKey(long window, int key, int scancode, int action, int modifiers, CallbackInfo ci)
     {
         MujiMod.INSTANCE.onKey(key, action);

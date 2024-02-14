@@ -4,7 +4,9 @@
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
       	"MinecraftClientMixin",
-		"KeyboardMixin"
+		"KeyboardMixin",
+		"WorldRendererMixin",
+		"LivingEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
