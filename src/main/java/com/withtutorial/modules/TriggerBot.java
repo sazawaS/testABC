@@ -38,11 +38,14 @@ public class TriggerBot extends ModuleBase
 
                 if (MinecraftClient.getInstance().player.getAttackCooldownProgress(0) == 1) {
 
-                    MujiMod.LOGGER.info("Can attack " + ent.getName());
-                    assert MinecraftClient.getInstance().interactionManager != null;
-                    MinecraftClient.getInstance().interactionManager.attackEntity(MinecraftClient.getInstance().player, entityResult.getEntity());
-                    assert MinecraftClient.getInstance().player != null;
-                    MinecraftClient.getInstance().player.swingHand(Hand.MAIN_HAND);
+                    if (!minecraftClient.getInstance().player.isUsingItem())
+                    {
+                        assert MinecraftClient.getInstance().interactionManager != null;
+                        MinecraftClient.getInstance().interactionManager.attackEntity(MinecraftClient.getInstance().player, entityResult.getEntity());
+                        assert MinecraftClient.getInstance().player != null;
+                        MinecraftClient.getInstance().player.swingHand(Hand.MAIN_HAND);
+                    }
+
                 }
             }
         }
