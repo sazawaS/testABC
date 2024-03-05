@@ -25,7 +25,7 @@ public class TriggerBot extends ModuleBase
     @Override
     public void onTick()
     {
-        if (this.isEnabled() && isREnabled)
+        if (this.isEnabled() && isREnabled && MinecraftClient.getInstance() != null && MinecraftClient.getInstance().player != null)
         {
             HitResult ray = MinecraftClient.getInstance().crosshairTarget;
 
